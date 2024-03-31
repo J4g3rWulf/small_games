@@ -1,8 +1,11 @@
-from colorama import Fore as f
-
 def printWord(word, tag):
+    '''
 
-    print(f"Tag: {f.LIGHTGREEN_EX}{tag}{f.RESET}")
+    :param word:
+    :param tag:
+    :return:
+    '''
+    print(f"Tag: {tag}")
     print("Word: ", end='')
     for r in range(len(word)):
         if word[r].islower() == True:
@@ -10,9 +13,12 @@ def printWord(word, tag):
         elif word[r].isupper() == True:
             print(word[r], end='')
 
-    print(f"{f.RESET}")
-
 def printHangMan(stage):
+    '''
+
+    :param stage:
+    :return:
+    '''
     print("\n")
     if stage == 0:
         print("------\n"
@@ -52,6 +58,10 @@ def printHangMan(stage):
              "|     /\\ \n")
 
 def endGame():
+    '''
+    
+    :return:
+    '''
     end = int(input("Wanna play again?\n[1 - Yes | 2 - No] -> "))
     if end == 2:
         return False

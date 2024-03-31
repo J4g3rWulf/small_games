@@ -1,6 +1,5 @@
 from functions import printWord, printHangMan, endGame
 from random import randint
-from colorama import Fore as f
 
 vehicles = ["Vehicles", "car", "bicycle", "plane", "helicopter", "skateboard", "jetski", "boat", "ship"]
 pets = ["Pets", "dog", "cat", "bird", "fish", "spider", "lizzard", "snake", "turtle"]
@@ -27,7 +26,7 @@ while True:
         if score == len(word):
             printHangMan(stage)
             printWord(word, tag)
-            print(f"You guessed it! The word was: {f.LIGHTGREEN_EX}{chosen_word}{f.RESET}!")
+            print(f"You guessed it! The word was: {chosen_word}!")
 
             reset = endGame()
             if reset == True:
@@ -39,7 +38,7 @@ while True:
         printWord(word, tag)
 
         if stage >= 4:
-            print(f"\nThe word was: {f.LIGHTRED_EX}{chosen_word}{f.RESET}!")
+            print(f"\nThe word was: {chosen_word}!")
             print("Game Over!")
             reset = endGame()
             if reset == True:
@@ -50,10 +49,10 @@ while True:
         print("Letters Guessed: ", end='')
         for r in range(len(letters)):
             if r == 0:
-                print(f"{f.LIGHTRED_EX}{letters[0]}{f.RESET}", end='')
+                print(letters[0], end='')
             else:
                 print("-", end='')
-                print(f"{f.LIGHTRED_EX}{letters[r]}{f.RESET}", end='')
+                print(letters[r], end='')
         print("\n\n")
 
         letter_guess = str(input("Which letter do you wanna guess?\n-> "))
